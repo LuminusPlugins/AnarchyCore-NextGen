@@ -1,0 +1,29 @@
+config-ver: 1
+
+duplication:
+  command:
+    enable: true
+    multiply-times: 2
+    max-amount: 2333
+  item-frame:
+    enable: false
+    possibility: 10 # percent
+  chicken:
+    xin-mode: false
+    xin-mode-periods:
+      - 15
+      - 30
+      - 45
+      - 0
+    click-mode: false
+    click-mode-cooldown: 3 # second
+  donkey:
+    xin-mode: false
+    org-mode: false
+    org-mode-allow-boat-chain: false
+  mine-and-place:
+    enable: false
+    amount: 10
+
+messages:
+  success-dupe: "&e&lSuccessfully duped items!"

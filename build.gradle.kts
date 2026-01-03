@@ -21,7 +21,7 @@ import io.izzel.taboolib.gradle.DatabasePlayerRedis
 plugins {
     java
     id("io.izzel.taboolib") version "2.0.27"
-    id("org.jetbrains.kotlin.jvm") version "2.2.0"
+    id("org.jetbrains.kotlin.jvm") version "2.0.0"
 }
 
 taboolib {
@@ -29,8 +29,6 @@ taboolib {
         install(Basic)
         install(App)
         install(Bukkit)
-        install(BukkitNMS)
-        install(BukkitNMSUtil)
         install(BukkitUtil)
         install(BukkitUI)
         install(BukkitHook)
@@ -55,7 +53,7 @@ taboolib {
             name("PlaceholderAPI")
         }
     }
-    version { taboolib = "6.2.4" }
+    version { taboolib = "6.2.0" }
 }
 
 repositories {

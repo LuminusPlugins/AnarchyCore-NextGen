@@ -1,5 +1,14 @@
 # AnarchyCore-NextGen
 
+## 权限
+- `anarchy.dupe.command`
+- `anarchy.dupe.mine-and-place`
+- `anarchy.dupe.item-frame`
+- `anarchy.dupe.donkey.xin`
+- `anarchy.dupe.donkey.org`
+- `anarchy.dupe.chicken.xin`
+- `anarchy.dupe.chicken.click`
+
 ## 构建发行版本
 
 发行版本用于正常使用, 不含 TabooLib 本体。
