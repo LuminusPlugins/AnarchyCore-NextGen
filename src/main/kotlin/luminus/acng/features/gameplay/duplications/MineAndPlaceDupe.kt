@@ -1,8 +1,7 @@
-package luminus.acng.dupe
+package luminus.acng.features.gameplay.duplications
 
 import luminus.acng.Main.config
 import luminus.acng.msg
-import org.bukkit.Material
 import org.bukkit.block.ShulkerBox
 import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.inventory.ItemStack

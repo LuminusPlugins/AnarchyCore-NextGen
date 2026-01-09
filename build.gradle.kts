@@ -1,33 +1,17 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import io.izzel.taboolib.gradle.*
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8
-import io.izzel.taboolib.gradle.Basic
-import io.izzel.taboolib.gradle.App
-import io.izzel.taboolib.gradle.Bukkit
-import io.izzel.taboolib.gradle.BukkitNMS
-import io.izzel.taboolib.gradle.BukkitNMSUtil
-import io.izzel.taboolib.gradle.BukkitUtil
-import io.izzel.taboolib.gradle.BukkitUI
-import io.izzel.taboolib.gradle.BukkitHook
-import io.izzel.taboolib.gradle.I18n
-import io.izzel.taboolib.gradle.MinecraftChat
-import io.izzel.taboolib.gradle.CommandHelper
-import io.izzel.taboolib.gradle.Metrics
-import io.izzel.taboolib.gradle.Database
-import io.izzel.taboolib.gradle.DatabasePlayer
-import io.izzel.taboolib.gradle.DatabasePlayerRedis
-
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     java
     id("io.izzel.taboolib") version "2.0.27"
     id("org.jetbrains.kotlin.jvm") version "2.0.0"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 taboolib {
     env {
         install(Basic)
-        install(App)
         install(Bukkit)
         install(BukkitUtil)
         install(BukkitUI)
@@ -58,6 +42,9 @@ taboolib {
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+    }
 }
 
 dependencies {
@@ -65,6 +52,23 @@ dependencies {
     compileOnly("ink.ptms.core:v12004:12004:universal")
     compileOnly(kotlin("stdlib"))
     compileOnly(fileTree("libs"))
+    shadow(fileTree("libsShadow"))
+}
+
+tasks {
+    shadowJar {
+        archiveClassifier.set("")
+        relocate("io.github.guangchen2333", "luminus.acng.shaded.io.github.guangchen2333")
+
+        minimize()
+    }
+    build {
+        dependsOn(shadowJar)
+    }
+
+    taboolibMainTask {
+        dependsOn(shadowJar)
+    }
 }
 
 tasks.withType<JavaCompile> {

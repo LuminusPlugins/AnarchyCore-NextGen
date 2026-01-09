@@ -25,5 +25,14 @@ duplication:
     enable: false
     amount: 10
 
+
+limits:
+  crystal-speed:
+    enable: false
+    limit: 300 # ms
+
+suicide-enable: true
+
 messages:
   success-dupe: "&e&lSuccessfully duped items!"
+  crystal-too-fast: "" # be empty better, %remain-seconds%

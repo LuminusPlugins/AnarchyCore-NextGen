@@ -1,4 +1,4 @@
-package luminus.acng.dupe
+package luminus.acng.features.gameplay.duplications
 
 import luminus.acng.Main.config
 import luminus.acng.msg

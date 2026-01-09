@@ -1,4 +1,4 @@
-package luminus.acng.dupe
+package luminus.acng.features.gameplay.duplications
 import luminus.acng.Main.config
 import luminus.acng.msg
 import org.bukkit.Bukkit
@@ -48,8 +48,8 @@ object DonkeyDupe {
 
             private fun processVehicleChain(entity: Entity) {
                 when {
-                    entity is Boat -> entity.passengers.forEach(::processAbstractHorse)
-                    entity.vehicle is Boat -> (entity.vehicle as Boat).passengers.forEach(::processAbstractHorse)
+                    entity is Boat -> entity.passengers.forEach(OrgMode::processAbstractHorse)
+                    entity.vehicle is Boat -> (entity.vehicle as Boat).passengers.forEach(OrgMode::processAbstractHorse)
                     else -> processAbstractHorse(entity)
                 }
             }

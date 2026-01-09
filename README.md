@@ -1,5 +1,8 @@
 # AnarchyCore-NextGen
 
+## 感谢
+[CrystalKillListener和它的作者GuangChen2333](https://github.com/GuangChen2333/CrystalKillListener/tree/master)
+
 ## 权限
 - `anarchy.dupe.command`
 - `anarchy.dupe.mine-and-place`
