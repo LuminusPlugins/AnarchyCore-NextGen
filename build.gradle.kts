@@ -6,7 +6,6 @@ plugins {
     java
     id("io.izzel.taboolib") version "2.0.27"
     id("org.jetbrains.kotlin.jvm") version "2.0.0"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 taboolib {
@@ -34,7 +33,7 @@ taboolib {
             name("https://luminus.leyanshi.fun")
         }
         dependencies {
-            name("PlaceholderAPI")
+            name("CrystalKillListener")
         }
     }
     version { taboolib = "6.2.0" }
@@ -52,23 +51,10 @@ dependencies {
     compileOnly("ink.ptms.core:v12004:12004:universal")
     compileOnly(kotlin("stdlib"))
     compileOnly(fileTree("libs"))
-    shadow(fileTree("libsShadow"))
+    compileOnly("io.github.guangchen2333:CrystalKillListener:2.0.0-SNAPSHOT")
 }
 
 tasks {
-    shadowJar {
-        archiveClassifier.set("")
-        relocate("io.github.guangchen2333", "luminus.acng.shaded.io.github.guangchen2333")
-
-        minimize()
-    }
-    build {
-        dependsOn(shadowJar)
-    }
-
-    taboolibMainTask {
-        dependsOn(shadowJar)
-    }
 }
 
 tasks.withType<JavaCompile> {
