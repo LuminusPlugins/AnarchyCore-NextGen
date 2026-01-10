@@ -32,6 +32,7 @@ object DonkeyDupe {
     object OrgMode {
             @SubscribeEvent
             fun onPlayerQuit(event: PlayerQuitEvent) {
+                if (!config.getBoolean("duplication.donkey.org-mode", false)) return
                 val player = event.player
                 val vehicle = player.vehicle ?: return
                 if (!player.hasPermission("anarchy.dupe.donkey.org")) return

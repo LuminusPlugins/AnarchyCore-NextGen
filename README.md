@@ -1,9 +1,29 @@
 # AnarchyCore-NextGen
 
+## 功能
+所有功能都可开关。
+
+### Duplications
+- [x] Chicken Dupe (with periods setting)
+- [x] Command Dupe
+- [x] Donkey Dupe
+- [x] Item Frame Dupe
+- [x] Mine and Place Dupe (x+1)
+
+### Miscellaneous
+- [x] Player Statistics (Kills, Deaths, Joins, Quits and permission placeholders)
+- [x] Suicide Command (Jump to Vanilla command if the sender is op)
+
+### Limits
+- [x] Crystal Speed Limit
+- [ ] End Portal TNT Limit
+
 ## 感谢
 [CrystalKillListener和它的作者GuangChen2333](https://github.com/GuangChen2333/CrystalKillListener/tree/master)
 
 ## 权限
+- `anarchy.reload`
+- `anarchy.suicide`
 - `anarchy.dupe.command`
 - `anarchy.dupe.mine-and-place`
 - `anarchy.dupe.item-frame`

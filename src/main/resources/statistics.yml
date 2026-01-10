@@ -1,0 +1,22 @@
+player:
+  enable: true
+  kills-include-crystal: true
+  crystal-kills-include-suicide: true
+
+
+messages:
+  player: # Support legacy colors
+    messages:
+      - "&7=========================="
+      - "&6Player: &f%name%"
+      - "&6Kills: &f%kills%"
+      - "&6Deaths: &f%deaths%"
+      - "&6K/D: &f%kd%"
+      - "&6Joins: &f%joins%"
+      - "&6Quits: &f%quits%"
+      - "&6Permissions: &f%has-anarchy.example%"
+      - "&7=========================="
+    permission-placeholders:
+      anarchy.example:
+        if-has: "&e&l114514"
+        if-not: "&c&l114514"

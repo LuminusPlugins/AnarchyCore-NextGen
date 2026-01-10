@@ -1,11 +1,17 @@
 package luminus.acng
 
+import luminus.acng.features.gameplay.duplications.ChickenDupe
+import luminus.acng.features.gameplay.duplications.MineAndPlaceDupe
+import luminus.acng.features.gameplay.limits.CrystalSpeedLimit
 import org.bukkit.ChatColor
 import org.bukkit.command.CommandSender
 import taboolib.common.platform.Plugin
+import taboolib.common.platform.ProxyCommandSender
 import taboolib.common.platform.command.CommandBody
 import taboolib.common.platform.command.CommandHeader
+import taboolib.common.platform.command.PermissionDefault
 import taboolib.common.platform.command.subCommand
+import taboolib.common.platform.function.adaptCommandSender
 import taboolib.common.platform.function.info
 import taboolib.common.platform.function.pluginVersion
 import taboolib.module.configuration.Config
@@ -16,7 +22,7 @@ object Main : Plugin() {
 
     @Config("config.yml")
     lateinit var config: Configuration
-    private const val CONFIG_VERSION = 1;
+    private const val CONFIG_VERSION = 3
 
     override fun onEnable() {
         if (config.getInt("config-ver", CONFIG_VERSION) != CONFIG_VERSION)
@@ -25,7 +31,7 @@ object Main : Plugin() {
 
     }
 
-    @CommandHeader("anarchycore", aliases = ["acng"])
+    @CommandHeader("anarchycore", aliases = ["acng"], permission = "anarchy.reload", permissionDefault = PermissionDefault.OP)
     object CommandMain {
         @CommandBody
         val info = subCommand {
@@ -35,28 +41,34 @@ object Main : Plugin() {
         }
 
         @CommandBody
-        val config = subCommand {
-            literal("reload", "rl") {
-                execute<CommandSender> { sender, _, _ ->
-                    Main.config.reload()
-                    sender.sendMessage("配置已重载")
-                }
+        val reload = subCommand {
+            execute<CommandSender> { sender, _, _ ->
+                config.reload()
+                luminus.acng.features.gameplay.miscs.stats.player.config.reload()
+                sender.msg("&eReloaded config.")
             }
+        }
 
-            literal("save") {
-                execute<CommandSender>{ sender, _, _ ->
-                    Main.config.saveToFile()
-                    sender.sendMessage("配置已保存")
-                }
+        @CommandBody
+        val clearcache = subCommand {
+            execute<CommandSender> { sender, _, _ ->
+                ChickenDupe.XinMode.reload()
+                MineAndPlaceDupe.map = hashMapOf()
+                CrystalSpeedLimit.cleanupOldData()
+                sender.msg("&eCleared caches")
             }
         }
     }
 }
 
-fun CommandSender.msg(str: String, vararg args: Any) {
-    var message = str
+fun CommandSender.msg(vararg args: Any) {
+    adaptCommandSender(this).message(args)
+}
+
+fun ProxyCommandSender.message(vararg args: Any) {
+    var message = ""
     args.forEach {
         message += it.toString()
     }
-    sendMessage(ChatColor.translateAlternateColorCodes('&', str))
+    sendMessage(ChatColor.translateAlternateColorCodes('&', message)) // 这里原来是str 我怎么傻了吧唧的
 }

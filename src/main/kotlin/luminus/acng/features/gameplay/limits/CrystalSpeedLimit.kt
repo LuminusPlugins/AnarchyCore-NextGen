@@ -14,9 +14,8 @@ object CrystalSpeedLimit {
 
     @SubscribeEvent
     fun onClick(event: EntityDamageByEntityEvent) {
-        if (event.entity !is EnderCrystal) return
+        if (event.entity !is EnderCrystal || event.damager !is Player) return
         val damager = event.damager
-        if (damager !is Player) return
 
         val enable = config.getBoolean("limits.crystal-speed.enable", false)
         if (!enable) return

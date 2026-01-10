@@ -10,7 +10,7 @@ import taboolib.common.platform.event.SubscribeEvent
 
 
 object MineAndPlaceDupe {
-    private var map: HashMap<String, Int> = HashMap()
+    var map: HashMap<String, Int> = HashMap()
 
     @SubscribeEvent
     fun onMine(event: BlockBreakEvent) {

@@ -1,4 +1,4 @@
-config-ver: 1
+config-ver: 3
 
 duplication:
   command:
@@ -30,9 +30,16 @@ limits:
   crystal-speed:
     enable: false
     limit: 300 # ms
+  ender-portal-entities:
+    enable: false
+    disable-ender-teleport: false # only enable when the main feature is enabled
+    limit: 10 # entities per second
+
+
 
 suicide-enable: true
 
 messages:
   success-dupe: "&e&lSuccessfully duped items!"
   crystal-too-fast: "" # be empty better, %remain-seconds%
+  suicide: "" # the same as ↑
