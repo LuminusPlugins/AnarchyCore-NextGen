@@ -15,7 +15,10 @@ object Suicide {
         simpleCommand("kill", aliases = arrayListOf("514", "suicide"), permission = "anarchy.suicide", permissionDefault = PermissionDefault.TRUE) { sender, args ->
             if (!config.getBoolean("suicide-enable", true)) return@simpleCommand
             if (sender !is Player) return@simpleCommand
-            if (sender.isOp) sender.performCommand("minecraft:kill "+args.joinToString(" "))
+            if (sender.isOp) {
+                sender.performCommand("minecraft:kill "+args.joinToString(" "))
+                return@simpleCommand
+            }
             sender.kill()
             sender.msg(config.getString("messages.suicide", "")!!)
         }

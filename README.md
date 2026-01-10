@@ -23,7 +23,7 @@ All the features can be enabled or disabled in `config.yml`.
 - [x] Suicide Command (Jump to Vanilla command if the sender is op)
 
 ### Limits
-- [x] Crystal Speed Limit
+- [x] Crystal Speed Limitd
 - [ ] End Portal TNT Limit
 
 ## Thanks
