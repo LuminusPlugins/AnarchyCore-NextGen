@@ -27,9 +27,9 @@
 - [ ] 末地传送门TNT限制
 
 ## 致谢
-[CrystalKillListener 的作者 GuangChen2333](https://github.com/GuangChen2333)
-[TabooLib](https://tabooproject.org)
-[SpigotMC](https://spigotmc.org)
+- [CrystalKillListener 的作者 GuangChen2333](https://github.com/GuangChen2333)
+- [TabooLib](https://tabooproject.org)
+- [SpigotMC](https://spigotmc.org)
 ## 权限
 - `anarchy.reload`
 - `anarchy.suicide`

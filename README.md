@@ -27,8 +27,9 @@ All the features can be enabled or disabled in `config.yml`.
 - [ ] End Portal TNT Limit
 
 ## Thanks
-[GuangChen2333, the author of CrystalKillListener](https://github.com/GuangChen2333)
-
+- [GuangChen2333, the author of CrystalKillListener](https://github.com/GuangChen2333)
+- [TabooLib](https://tabooproject.org)
+- [SpigotMC](https://spigotmc.org)
 ## Permissions
 - `anarchy.reload`
 - `anarchy.suicide`
