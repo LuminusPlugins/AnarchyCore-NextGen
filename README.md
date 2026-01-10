@@ -1,7 +1,15 @@
-# AnarchyCore-NextGen
+<div align="center">
+<h1>AnarchyCore-NextGen</h1>
 
-## 功能
-所有功能都可开关。
+English | [中文](README-cn.md)
+</div>
+
+## Depends
+
+- [CrystalKillListener v2.0](https://github.com/GuangChen2333/CrystalKillListener/releases/tag/v2.0), it still can use even it's archived
+
+## Features
+All the features can be enabled or disabled in `config.yml`.
 
 ### Duplications
 - [x] Chicken Dupe (with periods setting)
@@ -18,10 +26,10 @@
 - [x] Crystal Speed Limit
 - [ ] End Portal TNT Limit
 
-## 感谢
-[CrystalKillListener和它的作者GuangChen2333](https://github.com/GuangChen2333/CrystalKillListener/tree/master)
+## Thanks
+[GuangChen2333, the author of CrystalKillListener](https://github.com/GuangChen2333)
 
-## 权限
+## Permissions
 - `anarchy.reload`
 - `anarchy.suicide`
 - `anarchy.dupe.command`
@@ -32,20 +40,18 @@
 - `anarchy.dupe.chicken.xin`
 - `anarchy.dupe.chicken.click`
 
-## 构建发行版本
+## Build Universal Version
 
-发行版本用于正常使用, 不含 TabooLib 本体。
+The universal version is for normally using, and there's no TabooLib in it.
 
 ```
 ./gradlew build
 ```
 
-## 构建开发版本
+## Build Development Version
 
-开发版本包含 TabooLib 本体, 用于开发者使用, 但不可运行。
+This version is for developers debugging, and it can't use normally.
 
 ```
 ./gradlew taboolibBuildApi -PDeleteCode
 ```
-
-> 参数 -PDeleteCode 表示移除所有逻辑代码以减少体积。
