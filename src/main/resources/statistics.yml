@@ -15,7 +15,12 @@ messages:
       - "&6Joins: &f%joins%"
       - "&6Quits: &f%quits%"
       - "&6Permissions: &f%has-anarchy.example%"
+      - "&6Online Time: &f%formatted-online-time%" # %online-time-days% Days %online-time-hrs% Hrs %online-time-min% Min %online-time-sec% Sec
       - "&7=========================="
+    time-day: "Days"
+    time-hour: "Hrs"
+    time-minute: "Min"
+    time-sec: "Sec"
     permission-placeholders:
       anarchy.example:
         if-has: "&e&l114514"

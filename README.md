@@ -21,18 +21,22 @@ All the features can be enabled or disabled in `config.yml`.
 ### Miscellaneous
 - [x] Player Statistics (Kills, Deaths, Joins, Quits and permission placeholders)
 - [x] Suicide Command (Jump to Vanilla command if the sender is op)
+- [x] Custom Chat Color
 
 ### Limits
-- [x] Crystal Speed Limitd
-- [ ] End Portal TNT Limit
+- [x] Crystal Speed Limit
+- [x] End Portal TNT Limit
 
 ## Thanks
 - [GuangChen2333, the author of CrystalKillListener](https://github.com/GuangChen2333)
 - [TabooLib](https://tabooproject.org)
 - [SpigotMC](https://spigotmc.org)
+
 ## Permissions
 - `anarchy.reload`
 - `anarchy.suicide`
+- `anarchy.color.name`
+- `anarchy.color.message`
 - `anarchy.dupe.command`
 - `anarchy.dupe.mine-and-place`
 - `anarchy.dupe.item-frame`

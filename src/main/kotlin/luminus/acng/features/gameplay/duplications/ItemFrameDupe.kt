@@ -18,7 +18,7 @@ object ItemFrameDupe : Listener {
         if (event.rightClicked.type == EntityType.ITEM_FRAME) {
             val itemFrame = event.rightClicked as ItemFrame
 
-            if (Random().nextInt(100) + 1 <= config.getInt("dupe.item_frame.possibility")) {
+            if (Random().nextInt(100) < config.getInt("dupe.item_frame.possibility")) {
                 itemFrame.world.dropItem(itemFrame.location, itemFrame.item)
             }
             config.getString("messages.success-dupe", "Successfully duped")?.let { event.player.msg(it) }

@@ -7,6 +7,7 @@ import taboolib.common.LifeCycle
 import taboolib.common.platform.Awake
 import taboolib.common.platform.command.command
 import taboolib.common.platform.command.player
+import taboolib.common.platform.function.adaptPlayer
 
 
 object Command {
@@ -33,9 +34,12 @@ object Command {
 
         val permissionPlaceholders = config.getConfigurationSection("messages.player.permission-placeholders")
         var processedMessages = ""
+        Listeners.OnlineTime.saveCurrentSession(adaptPlayer(player))
+        val formattedOnlineTime = data.onlineTime.format(config.getString("messages.player.time-day", "Days")!!, config.getString("messages.player.time-hour", "Hours")!!, config.getString("messages.player.time-minute", "Minutes")!!, config.getString("messages.player.time-second", "Sec")!!)
 
         messages.forEach { message ->
             var processedMessage = message
+
 
             processedMessage = processedMessage
                 .replace("%name%", player.name)
@@ -44,6 +48,12 @@ object Command {
                 .replace("%kd%", data.kds.toString())
                 .replace("%joins%", data.joins.toString())
                 .replace("%quits%", data.quits.toString())
+                .replace("%online-time-days%", data.onlineTime.days.toString())
+                .replace("%online-time-hrs%", data.onlineTime.hours.toString())
+                .replace("%online-time-min%", data.onlineTime.minutes.toString())
+                .replace("%online-time-sec%", data.onlineTime.seconds.toString())
+                .replace("%formatted-online-time%", formattedOnlineTime)
+
 
             permissionPlaceholders?.let { section ->
                 section.getKeys(false).forEach { permission ->
@@ -66,6 +76,41 @@ object Command {
         return processedMessages
     }
 
-    data class PlayerData(val kills: Int, val deaths: Int, val kds: Double, val joins: Int, val quits: Int) {
+    data class PlayerData(val kills: Int, val deaths: Int, val kds: Double, val joins: Int, val quits: Int, val onlineTime: DateTime)
+    data class DateTime(val days: Int, val hours: Int, val minutes: Int, val seconds: Int) {
+        fun format(day: String, hrs: String, min: String, sec: String): String {
+            if (days != 0 && hours != 0 && minutes != 0 && seconds != 0) return "$days $day $hours $hrs $minutes $min $seconds $sec"
+            var result = ""
+            if (days != 0) {
+                result += "$days $day "
+            }
+            if (hours != 0) {
+                result += "$hours $hrs "
+            }
+            if (minutes != 0) {
+                result += "$minutes $min "
+            }
+            if (seconds != 0) {
+                result += "$seconds $sec"
+            }
+            return result
+        }
+
+        companion object {
+            fun decodeSecondsToDateTime(totalSeconds: Long): DateTime {
+                var remaining = totalSeconds
+
+                val days = (remaining / 86400).toInt()
+                remaining %= 86400
+
+                val hours = (remaining / 3600).toInt()
+                remaining %= 3600
+
+                val minutes = (remaining / 60).toInt()
+                val seconds = (remaining % 60).toInt()
+
+                return DateTime(days, hours, minutes, seconds)
+            }
+        }
     }
 }

@@ -35,8 +35,6 @@ limits:
     disable-ender-teleport: false # only enable when the main feature is enabled
     limit: 10 # entities per second
 
-
-
 suicide-enable: true
 
 messages:

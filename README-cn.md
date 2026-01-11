@@ -24,7 +24,13 @@
 
 ### 限制功能
 - [x] 末影水晶速度限制
-- [ ] 末地传送门TNT限制
+- [x] 末地传送门TNT限制
+
+### 搭配以下插件食用最佳
+- [AnarchyExploitFixes](https://modrinth.com/plugin/anarchyexploitfixes)
+- [NoJoinMessage](https://hangar.papermc.io/MCFurina/NoJoinMessage)
+- [LeeesBungeeQueue](https://github.com/XeraPlugins/LeeesBungeeQueue)
+- 
 
 ## 致谢
 - [CrystalKillListener 的作者 GuangChen2333](https://github.com/GuangChen2333)
@@ -33,6 +39,8 @@
 ## 权限
 - `anarchy.reload`
 - `anarchy.suicide`
+- `anarchy.color.name`
+- `anarchy.color.message`
 - `anarchy.dupe.command`
 - `anarchy.dupe.mine-and-place`
 - `anarchy.dupe.item-frame`
