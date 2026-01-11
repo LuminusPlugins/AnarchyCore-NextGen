@@ -22,7 +22,7 @@ object Main : Plugin() {
 
     @Config("config.yml")
     lateinit var config: Configuration
-    private const val CONFIG_VERSION = 3
+    private const val CONFIG_VERSION = 4
 
     override fun onEnable() {
         if (config.getInt("config-ver", CONFIG_VERSION) != CONFIG_VERSION)
