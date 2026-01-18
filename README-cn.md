@@ -6,7 +6,10 @@
 
 ## 依赖
 
-- [CrystalKillListener v2.0](https://github.com/GuangChen2333/CrystalKillListener/releases/tag/v2.0) (项目已归档，但仍可使用)
+- [CrystalKillListener v2.0](https://github.com/GuangChen2333/CrystalKillListener/releases/tag/v2.0)
+
+## 发布
+Modrinth, MineBBS, GitHub
 
 ## 功能
 所有功能都可以在 `config.yml` 中开启或关闭。
