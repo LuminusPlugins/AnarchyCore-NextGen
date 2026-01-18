@@ -30,7 +30,7 @@ object Main : Plugin() {
         if (config.getInt("config-ver", CONFIG_VERSION) != CONFIG_VERSION)
             BukkitPlugin.getInstance().saveResource("config.yml", true)
         info("Successfully loaded AnarchyCore-NextGen")
-        BukkitMetrics(BukkitPlugin.getInstance(), "", 28895, "0.1.0")
+        BukkitMetrics(BukkitPlugin.getInstance(), "AnarchyCore-NextGen", 28895, "0.1.0")
     }
 
     @CommandHeader("anarchycore", aliases = ["acng"], permission = "anarchy.reload", permissionDefault = PermissionDefault.OP)
