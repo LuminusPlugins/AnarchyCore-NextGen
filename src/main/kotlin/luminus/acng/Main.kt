@@ -20,6 +20,8 @@ import taboolib.module.configuration.Configuration
 import taboolib.platform.BukkitMetrics
 import taboolib.platform.BukkitPlugin
 
+
+// 1
 object Main : Plugin() {
 
     @Config("config.yml")
