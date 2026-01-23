@@ -3,7 +3,6 @@ package luminus.acng
 import luminus.acng.features.gameplay.duplications.ChickenDupe
 import luminus.acng.features.gameplay.duplications.MineAndPlaceDupe
 import luminus.acng.features.gameplay.limits.CrystalSpeedLimit
-import luminus.acng.utils.Metrics
 import org.bukkit.ChatColor
 import org.bukkit.command.CommandSender
 import taboolib.common.platform.Plugin
