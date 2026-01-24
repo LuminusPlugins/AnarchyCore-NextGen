@@ -32,18 +32,18 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew clean build  # clean 清空旧构建产物，build 执行编译打包
 
-      # 5. 生成 YYYYMMDD 格式的版本号
-      - name: Generate release version (YYYYMMDD)
+      # 5. 生成 YYYYMMDDHHMMSS 格式的版本号（添加了小时分钟秒）
+      - name: Generate release version (YYYYMMDDHHMMSS)
         id: generate_version
-        run: echo "VERSION=$(date +'%Y%m%d')" >> $GITHUB_ENV
+        run: echo "VERSION=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
 
       # 6. 发布 Release 并上传 JAR 文件
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          # Release 标签和名称均使用 YYYYMMDD 格式
-          tag_name: s${{ env.VERSION }}
-          name: release${{ env.VERSION }}
+          # Release 标签和名称均使用 YYYYMMDDHHMMSS 格式
+          tag_name: dev_branch${{ env.VERSION }}
+          name: Developmental Version ${{ env.VERSION }}
           # 上传 build/libs 下的所有 jar 文件（通常只有一个）
           files: build/libs/*.jar
           # 可选：是否为预发布版本（false 为正式发布）
