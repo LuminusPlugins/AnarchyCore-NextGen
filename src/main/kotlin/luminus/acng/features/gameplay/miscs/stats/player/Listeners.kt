@@ -123,7 +123,7 @@ object Listeners {
                 pdc.set(killsKey, PersistentDataType.INTEGER, currentJoins + amount)
             }
         }
-
+    
         private fun updateQuits(player: Player?, amount: Int) {
             player?.let {
                 val pdc = it.persistentDataContainer
