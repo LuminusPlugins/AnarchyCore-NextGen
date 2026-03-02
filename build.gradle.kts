@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     java
-    id("io.izzel.taboolib") version "2.0.27"
+    id("io.izzel.taboolib") version "2.0.31"
     id("org.jetbrains.kotlin.jvm") version "2.0.0"
 }
 
@@ -36,7 +36,7 @@ taboolib {
             name("CrystalKillListener")
         }
     }
-    version { taboolib = "6.2.0" }
+    version { taboolib = "6.2.4" }
 }
 
 repositories {
