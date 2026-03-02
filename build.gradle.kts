@@ -48,7 +48,6 @@ dependencies {
     compileOnly("ink.ptms.core:v12004:12004:universal")
     compileOnly(kotlin("stdlib"))
     compileOnly(fileTree("libs"))
-    compileOnly("io.github.guangchen2333:CrystalKillListener:2.0.0-SNAPSHOT")
 }
 
 tasks {
