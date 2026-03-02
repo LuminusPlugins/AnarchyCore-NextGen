@@ -36,7 +36,7 @@ taboolib {
             name("CrystalKillListener")
         }
     }
-    version { taboolib = "6.2.4" }
+    version { taboolib = "6.2.4-99fb800" }
 }
 
 repositories {
